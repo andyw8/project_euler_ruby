@@ -8,14 +8,10 @@ class Fixnum
   end
 end
 
-def products(x)
-  r = []
-  1.upto(x) do |i|
-    1.upto(x) do |j|
-      r << i*j
-    end
-  end
-  r.uniq.sort.reverse
+def products(x)  
+  range = (1..x).to_a
+  elements = range.product(range).map{ |a| a[0] * a[1] }
+  elements.uniq.sort.reverse
 end
 
 def largest(n)
