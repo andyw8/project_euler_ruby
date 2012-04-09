@@ -15,9 +15,7 @@ def products(x)
 end
 
 def largest(n)
-  products(n).each do |p|
-    return p if p.palindrome?
-  end
+  products(n).find(&:palindrome?)
 end
 
 p largest(999)
